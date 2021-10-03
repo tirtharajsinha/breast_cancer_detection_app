@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset='UTF-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+    <link rel="shortcut icon" href="static/ribbon.png" type="image/x-icon">
+    <link rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css'>
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css'>
+    <link rel="stylesheet" href="static/style.css">
+
+    <script src="static/index.js"></script>
+
+
+
+    <title>HOME | Brest Cancer Detection</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="box">
+            <div class="nev">
+                <div class="logo">
+                    <a href=""><img src="static/ribbon.png" alt=""></a>
+                    <p id="hashtag"></p>
+                    <script src="static/lib/typed.js"></script>
+                    <script>
+                        var typed = new Typed("#hashtag", {
+                            strings: [
+                                "#breastcancer",
+                                "#breastcancerawareness",
+                                "#pinkribbon",
+                                "#cancersucks"
+                            ],
+                            typeSpeed: 50,
+                            backSpeed: 50,
+                            loop: true,
+                        });
+                    </script>
+                </div>
+
+                <div class="react">
+                    <i class="fa fa-search"></i>
+                    <i class="fa fa-heart-o"></i>
+                    <i class="fa fa-plus"></i>
+                </div>
+            </div>
+
+            <div class="card">
+                <div class="main-block">
+                    <p>Detects Breast cancer using Modern Deep Learning</p>
+                    <a href="" class="main-btn">Check Out</a>
+                </div>
+                <div class="side-block">
+                    <img src="static/heart.jpg" alt="">
+                    <p>Learn more about <a href="https://www.nationalbreastcancer.org/about-breast-cancer/"> Brest
+                            cancer</a>.</p>
+                </div>
+            </div>
+
+            <h2 id="step">Step1 : Put Mammogram Image</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                <label for="image"><img src="static/plus.png" alt="" id="preview"></label>
+                <input type="file" name="image" id="image" accept=".jpg,.png,.jpeg" onchange="dispimg(this)">
+                <input type="submit" id="submit" value="Predict">
+            </form>
+
+
+            {% if result %}
+            <div class="partition"></div>
+            <div class="result">
+                <img src="https://i.gifer.com/Ij0J.gif" alt="">
+                <div class="rcard">
+                    <p>OUR PREDECTION</p>
+                    <p class="card-number">{{result}}</p>
+                    <img src="data:image/jpeg;base64,{{ image }}" alt="" id="loaded">
+                    <p class="card-date" id="card-date"></p>
+                </div>
+                <script>
+                    const d = new Date();
+                    let string = d.getDate() + "/" + d.getMonth() + "/" + d.getFullYear();
+                    document.getElementById("card-date").innerHTML = string;
+                </script>
+            </div>
+            <div class="feed">
+                <p>Liked our service? We would like recive feedback from you.</p>
+                <div class="feed-btn">
+                    <a href="">[Yes]</a>
+                    <a href="">[No Thanks]</a>
+                </div>
+            </div>
+            {% endif %}
+
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>
