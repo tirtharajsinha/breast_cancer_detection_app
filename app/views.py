@@ -33,18 +33,8 @@ def index():
                 pil_img.save(data, "JPEG")
                 encoded_img_data = base64.b64encode(data.getvalue())
                 img_data = encoded_img_data.decode('utf-8')
-                # add(result=decision)
                 return render_template("index.html", result=decision, image=img_data)
             except Exception as e:
                 print(e, "\nunsuccessful", cv_img.shape)
 
     return render_template("index.html")
-
-
-# def add(result):
-#     from app import db
-#     from models import User
-#     user = User(result=result)
-#     db.session.add(user)
-#     db.session.commit()
-#     print(User.query.all())

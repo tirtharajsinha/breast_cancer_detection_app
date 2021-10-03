@@ -1,4 +1,3 @@
-# import db object from flask app
 from app import db
 
 # database tables
