@@ -50,6 +50,8 @@
             <div class="card">
                 <div class="main-block">
                     <p>Detects Breast cancer using Modern Deep Learning</p>
+                    <h4>already <span style="color:rgb(255, 0, 128);">{{count}}</span> Images successfully predected.
+                    </h4>
                     <a href="" class="main-btn">Check Out</a>
                 </div>
                 <div class="side-block">
@@ -58,21 +60,15 @@
                             cancer</a>.</p>
                 </div>
             </div>
-
-            <h2 id="step">Step1 : Put Mammogram Image</h2>
-            <form action="" method="post" enctype="multipart/form-data">
-                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
-                <label for="image"><img src="static/plus.png" alt="" id="preview"></label>
-                <input type="file" name="image" id="image" accept=".jpg,.png,.jpeg" onchange="dispimg(this)">
-                <input type="submit" id="submit" value="Predict">
-            </form>
-
-
             {% if result %}
-            <div class="partition"></div>
-            <div class="result">
+            <div class="partition" id="par1"></div>
+            <div class="conf" id="conf">
+                <i class="fa fa-close" onclick="close_result()"></i>
+            </div>
+            <div class="result" id="result">
                 <img src="https://i.gifer.com/Ij0J.gif" alt="">
                 <div class="rcard">
+                    <br>
                     <p>OUR PREDECTION</p>
                     <p class="card-number">{{result}}</p>
                     <img src="data:image/jpeg;base64,{{ image }}" alt="" id="loaded">
@@ -84,14 +80,25 @@
                     document.getElementById("card-date").innerHTML = string;
                 </script>
             </div>
-            <div class="feed">
-                <p>Liked our service? We would like recive feedback from you.</p>
+            <div class="feed" id="feed">
+                <p>Liked our service? We would like to recive feedback from you.</p>
                 <div class="feed-btn">
                     <a href="">[Yes]</a>
-                    <a href="">[No Thanks]</a>
+                    <a onclick="close_feed()">[No Thanks]</a>
                 </div>
             </div>
+            <div class="partition"></div>
             {% endif %}
+            <h2 id="step">Step1 : Put Mammogram Image</h2>
+            <form action="" method="post" enctype="multipart/form-data">
+                <input type="hidden" name="csrf_token" value="{{ csrf_token() }}" />
+                <label for="image"><img src="static/plus.png" alt="" id="preview"></label>
+                <input type="file" name="image" id="image" accept=".jpg,.png,.jpeg" onchange="dispimg(this)">
+                <input type="submit" id="submit" value="Predict">
+            </form>
+
+
+
 
         </div>
     </div>

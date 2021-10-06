@@ -202,6 +202,7 @@ form {
     justify-content: space-around;
     align-items: center;
     transition: all 1s ease;
+    margin-bottom: 50px;
 }
 
 #image {
@@ -247,8 +248,8 @@ form img {
     display: block;
     margin: auto;
     border-radius: 20px;
-    margin-top: 50px;
-    margin-bottom: 100px;
+    margin-top: 20px;
+    margin-bottom: 50px;
     /* display: none; */
 }
 
@@ -280,7 +281,7 @@ form img {
 
 .card-number {
     position: absolute;
-    bottom: 10%;
+    bottom: 30%;
     letter-spacing: 5px;
 }
 
@@ -302,6 +303,7 @@ form img {
 .feed {
     width: 90%;
     margin: auto;
+    margin-top: 50px;
     margin-bottom: 50px;
     border-radius: 20px;
     background-color: #111;
@@ -328,6 +330,7 @@ form img {
     text-decoration: none;
     font-size: 15px;
     margin-left: 10px;
+    cursor: pointer;
 }
 
 @media only screen and (max-width: 1000px) {
@@ -426,4 +429,18 @@ form img {
         background: url("mobile-bg.jpg");
         background-size: contain;
     }
+}
+
+.conf {
+    width: 100%;
+    display: flex;
+    justify-content: right;
+    padding-right: 50px;
+}
+
+.conf i {
+    font-size: 25px;
+    font-weight: 500;
+    color: rgb(53, 53, 53);
+    cursor: pointer;
 }
