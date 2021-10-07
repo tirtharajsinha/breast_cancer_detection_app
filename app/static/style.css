@@ -281,7 +281,7 @@ form img {
 
 .card-number {
     position: absolute;
-    bottom: 30%;
+    bottom: 20%;
     letter-spacing: 5px;
 }
 
@@ -412,6 +412,9 @@ form img {
     }
     .card .main-block p {
         font-size: 16px;
+    }
+    .card {
+        display: none;
     }
     .result {
         width: 300px;
