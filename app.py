@@ -31,5 +31,10 @@ app.add_url_rule('/', view_func=views.index, methods=['GET', 'POST'])
 
 
 if __name__ == "__main__":
-    db.create_all()
+
+    # try:
+    #     db.create_all()
+    # except Exception as e:
+    #     print(e)
+
     app.run(debug=True)

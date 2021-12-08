@@ -1,0 +1,456 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  overflow: hidden;
+  background: url("image.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  min-width: 500px;
+  background: rgb(38, 38, 38);
+  background: linear-gradient(
+    17deg,
+    rgba(38, 38, 38, 0.547) 65%,
+    rgba(209, 209, 209, 0.863) 86%,
+    rgba(54, 54, 54, 0.519) 97%
+  );
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.3);
+  animation: animate 1.2s ease-in;
+  animation-fill-mode: forwards;
+  animation-iteration-count: 1;
+}
+
+@keyframes animate {
+  0% {
+    width: 100%;
+  }
+  80% {
+    width: 50%;
+  }
+  85% {
+    width: calc(50% + 30px);
+  }
+  100% {
+    width: 50%;
+  }
+}
+
+.box {
+  width: 100%;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.box::-webkit-scrollbar {
+  width: 5px;
+}
+
+.box::-webkit-scrollbar:hover {
+  width: 10px;
+}
+
+.box::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+.box::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+.box::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+.nev {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  justify-content: space-between;
+  background: transparent;
+  box-shadow: 12px 12px 16px 0 rgba(0, 0, 0, 0.25),
+    -8px -8px 12px 0 rgba(255, 255, 255, 0.24);
+  border-top-right-radius: 30px;
+  padding: 10px;
+  padding-right: 20px;
+  padding-left: 20px;
+}
+
+.nev .logo {
+  display: flex;
+  justify-content: left;
+}
+
+.logo img {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.logo p {
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(59, 59, 59);
+}
+
+.react {
+  display: flex;
+  justify-content: right;
+}
+
+.react i {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+.card {
+  width: calc(100% - 30px);
+  display: flex;
+  justify-content: space-between;
+  margin: auto;
+  background-color: rgb(239, 209, 243);
+  border-radius: 20px;
+  padding: 33px;
+  margin-top: 40px;
+}
+
+.card .main-block {
+  display: flex;
+  flex-direction: column;
+  width: calc(100% - 240px);
+}
+
+.card .main-block p {
+  color: rgb(34, 34, 34);
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.card .main-block .main-btn {
+  display: block;
+  width: 160px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 12px;
+  background-color: rgb(170, 119, 218);
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  margin-top: 20px;
+}
+
+.card .side-block {
+  width: 230px;
+  height: auto;
+  background-color: rgb(247, 247, 247);
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.card .side-block img {
+  width: 70px;
+  height: 70px;
+  display: block;
+  margin: auto;
+}
+
+.card .side-block p {
+  padding: 18px;
+  color: black;
+  font-size: 16px;
+  font-weight: 600;
+}
+
+@media only screen and (max-width: 1100px) {
+  .box {
+    padding: 20px;
+  }
+  .box .main-block .main-btn {
+    width: auto;
+  }
+  .box .main-block {
+    width: calc(100% - 180px);
+  }
+  .card .main-block p {
+    font-size: 20px;
+  }
+  .box .side-block {
+    width: 170px;
+  }
+}
+
+h2 {
+  text-align: left;
+  margin-top: 30px;
+  padding-left: 30px;
+  color: rgb(255, 255, 255);
+  font-weight: 400;
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transition: all 1s ease;
+  margin-bottom: 50px;
+}
+
+#image {
+  display: none;
+}
+
+form img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  border: 5px solid rgba(56, 56, 56, 0.719);
+  cursor: crosshair;
+}
+
+#submit {
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  background: rgba(56, 56, 56, 0.719);
+  border: none;
+  color: white;
+  font-size: 16px;
+  display: none;
+  cursor: pointer;
+}
+
+.partition {
+  width: calc(100% - 20px);
+  height: 0px;
+  border-top: 5px solid rgb(73, 73, 73);
+  border-radius: 50px;
+  margin: auto;
+  margin-top: 25px;
+  margin-bottom: 25px;
+}
+
+.result {
+  width: 400px;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  background: black;
+  display: block;
+  margin: auto;
+  border-radius: 20px;
+  margin-top: 20px;
+  margin-bottom: 50px;
+  /* display: none; */
+}
+
+.result img {
+  position: absolute;
+  top: -50px;
+  left: -120px;
+  width: 500px;
+  height: 260px;
+}
+
+.rcard {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 10px;
+  border-radius: 20px;
+  color: #fff;
+  font-size: 18px;
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 10px 10px 20px -10px rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(2px);
+  transition: 0.5s ease;
+}
+
+.card-number {
+  position: absolute;
+  bottom: 20%;
+  letter-spacing: 5px;
+}
+
+.card-date {
+  position: absolute;
+  bottom: 50%;
+  letter-spacing: 5px;
+  color: rgb(172, 172, 172);
+}
+
+#loaded {
+  top: 50px;
+  left: 60%;
+  width: 120px;
+  height: 120px;
+  border-radius: 10px;
+}
+
+.feed {
+  width: 90%;
+  margin: auto;
+  margin-top: 50px;
+  margin-bottom: 50px;
+  border-radius: 20px;
+  background-color: #111;
+  padding: 20px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.feed p {
+  color: white;
+  font-family: "Inconsolata", monospace;
+  font-size: 15px;
+}
+
+.feed .feed-btn {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  padding-left: 50px;
+}
+
+.feed .feed-btn a {
+  color: white;
+  text-decoration: none;
+  font-size: 15px;
+  margin-left: 10px;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    width: 60%;
+    @keyframes animate {
+      0% {
+        width: 100%;
+      }
+      80% {
+        width: 50%;
+      }
+      85% {
+        width: calc(50% + 30px);
+      }
+      100% {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .container {
+    width: 60%;
+  }
+  @keyframes animate {
+    0% {
+      width: 100%;
+    }
+    80% {
+      width: 60%;
+    }
+    85% {
+      width: calc(60% + 30px);
+    }
+    100% {
+      width: 60%;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .container {
+    width: 70%;
+  }
+  @keyframes animate {
+    0% {
+      width: 100%;
+    }
+    80% {
+      width: 80%;
+    }
+    85% {
+      width: calc(70% + 30px);
+    }
+    100% {
+      width: 80%;
+    }
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .container {
+    width: 100%;
+    animation: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+    min-width: 0px;
+  }
+  .box {
+    padding: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .nev {
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .card .main-block p {
+    font-size: 16px;
+  }
+  .card {
+    display: none;
+  }
+  .result {
+    width: 300px;
+    height: 240px;
+  }
+  form {
+    margin-bottom: 100px;
+    flex-direction: column;
+    align-items: center;
+  }
+  form #submit {
+    margin-top: 20px;
+  }
+  body {
+    background: url("mobile-bg.jpg");
+    background-size: contain;
+  }
+}
+
+.conf {
+  width: 100%;
+  display: flex;
+  justify-content: right;
+  padding-right: 50px;
+}
+
+.conf i {
+  font-size: 25px;
+  font-weight: 500;
+  color: rgb(53, 53, 53);
+  cursor: pointer;
+}
